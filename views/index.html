@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'Inscription</title>
+</head>
+<body>
+    <!-- Lien pour accéder à la page de matching -->
+    <a href="/matching">Matcher</a>
+    
+    <!-- Titre de la page -->
+    <h1>Sport</h1>
+
+    <!-- Formulaire d'inscription -->
+    <form action="/" method="POST">
+        <!-- Champ Prénom -->
+        <label for="prenom" required>Prénom : </label>
+        <input type="text" name="prenom" id="prenom"><br>
+
+        <!-- Champ Nom -->
+        <label for="nom" required>Nom : </label>
+        <input type="text" name="nom" id="nom"><br>
+
+        <!-- Champ Date de Naissance -->
+        <label for="date_naissance" required>Date de naissance : </label>
+        <input type="date" name="date_naissance" id="date_naissance"><br>
+
+        <!-- Champ Genre -->
+        <label for="genre">Genre : </label>
+        <input type="radio" name="genre" value="homme" id="homme"><label for="homme" required>Homme </label>
+        <input type="radio" name="genre" value="femme" id="femme"><label for="femme" required>Femme</label><br>
+
+        <!-- Champ Département (Liste déroulante) -->
+        <label for="departement" required>Département : </label>
+        <select name="departement" id="departement">
+            <!-- Boucle pour afficher les options des départements -->
+            {% for departement in departements %}
+            <option value="{{departement}}">{{departement}}</option>
+            {% endfor %}
+        </select><br>
+
+        <!-- Champ Sport (Liste déroulante) -->
+        <label for="sport" required>Sport : </label>
+        <select name="sport" id="sport">
+            <!-- Boucle pour afficher les options des sports -->
+            {% for sport in sports %}
+            <option value="{{sport}}">{{sport}}</option>
+            {% endfor %}
+        </select><br>
+
+        <!-- Bouton de soumission du formulaire -->
+        <button type="submit">Entrer</button>
+    </form>
+</body>
+</html>

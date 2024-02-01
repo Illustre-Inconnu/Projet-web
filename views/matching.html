@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de Matching</title>
+</head>
+<body>
+    <!-- Lien pour accéder à la page d'inscription -->
+    <a href="/">S'inscrire</a>
+    
+    <!-- Titre de la page -->
+    <h1>Recherche</h1>
+
+    <!-- Formulaire de recherche -->
+    <form action="" method="POST">
+        <!-- Champ Sport (Liste déroulante) -->
+        <label for="sport" required>Sport : </label>
+        <select name="sport" id="sport">
+            <option value="aucun">Aucun</option>
+            <!-- Boucle pour afficher les options des sports -->
+            {% for sport in sports %}
+            <option value="{{sport}}">{{sport}}</option>
+            {% endfor %}
+        </select>
+
+        <!-- Champ Département (Liste déroulante) -->
+        <label for="departement" required>Département : </label>
+        <select name="departement" id="departement">
+            <option value="aucun">Aucun</option>
+            <!-- Boucle pour afficher les options des départements -->
+            {% for departement in departements %}
+            <option value="{{departement}}">{{departement}}</option>
+            {% endfor %}
+        </select>
+
+        <!-- Bouton de soumission du formulaire -->
+        <button type="submit">Entrer</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultat de Matching</title>
+</head>
+<body>
+    <!-- Boucle pour afficher les utilisateurs correspondants -->
+    {% for utilisateur in liste_utilisteur_match %}
+        <!-- Informations sur l'utilisateur -->
+        <p>Nom : {{ utilisateur[0] }}</p>
+        <p>Prénom : {{ utilisateur[1] }}</p>
+        <p>Sport : {{ utilisateur[2] }}</p>
+        <p>Département : {{ utilisateur[3] }}</p>
+        <hr> <!-- Ligne de séparation entre les utilisateurs -->
+    {% endfor %}
+</body>
+</html>
